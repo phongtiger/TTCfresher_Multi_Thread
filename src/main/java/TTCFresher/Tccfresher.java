@@ -50,7 +50,7 @@ public class Tccfresher {
                 .setNumberOfAnimal(10)
                 .setSizeRoad(10000)
                 .build();
-        road.playRoad();
+        road.playRoadNew();
 //        HashMap<String,LocalDateTime> localDateTimeHashMap = new HashMap<>();
 //        Thread thread = new Thread(new Runnable() {
 //            @Override
