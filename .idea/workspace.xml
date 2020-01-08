@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3d2cf59-e686-42dd-b010-f8d6e38cfdce" name="Default Changelist" comment="" />
+    <list default="true" id="a3d2cf59-e686-42dd-b010-f8d6e38cfdce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +23,20 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1W2xX1XtDhuT54w3DGcdUkiWXeQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -20,9 +44,36 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="TTCFresher" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tccfresher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TTCFresher.Tccfresher" />
+      <module name="MultiThread.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TTCFresher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Tccfresher" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -46,11 +97,75 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578361527027</updated>
-      <workItem from="1578361535773" duration="7000" />
+      <workItem from="1578361535773" duration="37789000" />
+      <workItem from="1578445507269" duration="734000" />
+      <workItem from="1578447478313" duration="237000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="724" y="167" width="462" height="706" key="#com.intellij.ide.util.MemberChooser" timestamp="1578412145374">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="724" y="167" width="462" height="706" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1578412145374" />
+    <state x="529" y="27" width="852" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578393449941">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="529" y="27" width="852" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988@0.27.1920.988" timestamp="1578393449941" />
+    <state width="1864" height="303" key="GridCell.Tab.0.bottom" timestamp="1578442530419">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1864" height="303" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1578442530419" />
+    <state width="1864" height="303" key="GridCell.Tab.0.center" timestamp="1578442530418">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1864" height="303" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1578442530418" />
+    <state width="1864" height="303" key="GridCell.Tab.0.left" timestamp="1578442530418">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1864" height="303" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1578442530418" />
+    <state width="1864" height="303" key="GridCell.Tab.0.right" timestamp="1578442530418">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1864" height="303" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1578442530418" />
+    <state width="1864" height="303" key="GridCell.Tab.1.bottom" timestamp="1578442530419">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1864" height="303" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1578442530419" />
+    <state width="1864" height="303" key="GridCell.Tab.1.center" timestamp="1578442530419">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1864" height="303" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1578442530419" />
+    <state width="1864" height="303" key="GridCell.Tab.1.left" timestamp="1578442530419">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1864" height="303" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1578442530419" />
+    <state width="1864" height="303" key="GridCell.Tab.1.right" timestamp="1578442530419">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1864" height="303" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1578442530419" />
+    <state x="540" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1578447478733">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="540" y="309" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1578447478733" />
+    <state x="630" y="238" width="649" height="564" key="extract.method.dialog" timestamp="1578391206472">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="630" y="238" width="649" height="564" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1578391206472" />
+    <state x="644" y="82" width="622" height="876" key="refactoring.ChangeSignatureDialog" timestamp="1578399957060">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="644" y="82" width="622" height="876" key="refactoring.ChangeSignatureDialog/0.27.1920.988@0.27.1920.988" timestamp="1578399957060" />
+    <state x="540" y="233" key="run.anything.popup" timestamp="1578381099256">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="540" y="233" key="run.anything.popup/0.27.1920.988@0.27.1920.988" timestamp="1578381099256" />
+    <state x="539" y="26" width="840" height="1034" key="search.everywhere.popup" timestamp="1578384249510">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="539" y="26" width="840" height="1034" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1578384249510" />
   </component>
 </project>
