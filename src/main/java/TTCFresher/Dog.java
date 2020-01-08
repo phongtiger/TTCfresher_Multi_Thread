@@ -58,14 +58,7 @@ public class Dog implements Animal,Runnable {
     }
 
     @Override
-    public void runRoad() throws InterruptedException {
-        System.out.println(this.name + " id: " + this.id + " start");
-        int count = 0;
-        while (count<= this.sizeRoad){
-            count += this.step*this.timeStep/10000;
-            Thread.sleep(10);
-        }
-        System.out.println(this.name + " id: " + this.id + " done");
+    public void runRoad() {
     }
     @Override
     public void run() {
