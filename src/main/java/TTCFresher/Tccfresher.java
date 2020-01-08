@@ -26,10 +26,10 @@ public class Tccfresher {
                 .setNumberOfAnimal(10)
                 .setSizeRoad(10000)
                 .build();
-//Khong gioi han luong
-//        road.playRoad();
+        //Khong gioi han luong
+        road.playRoadUnLimit();
         //Co gioi han luong
-        road.playRoadNew();
+//        road.playRoadNew();
 
     }
 }
