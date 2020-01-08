@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Road {
     private List<List<Animal>> lists1;
@@ -56,14 +58,15 @@ public class Road {
         thread1= new Thread(new Runnable() {
             @Override
             public void run() {
+                ExecutorService executor = Executors.newSingleThreadExecutor();
                 for (Animal a: lists1.get(0)) {
-                    try {
-                       a.runRoad();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    Runnable runnable = (Runnable) a;
+                    executor.execute(runnable);;
                 }
+                executor.shutdown();
+                while (!executor.isTerminated()) {
 
+                }
                 System.out.println(" Thread Cat Done");
                 localDateTimeHashMap.put("Cat",LocalDateTime.now());
             }
@@ -71,12 +74,14 @@ public class Road {
         thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
+                ExecutorService executor = Executors.newSingleThreadExecutor();
                 for (Animal a: lists1.get(1)) {
-                    try {
-                        a.runRoad();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    Runnable runnable = (Runnable) a;
+                    executor.execute(runnable);;
+                }
+                executor.shutdown();
+                while (!executor.isTerminated()) {
+
                 }
                 System.out.println(" Thread Dog Done");
                 localDateTimeHashMap.put("Dog",LocalDateTime.now());
@@ -86,12 +91,14 @@ public class Road {
         thread3 = new Thread(new Runnable() {
             @Override
             public void run() {
+                ExecutorService executor = Executors.newSingleThreadExecutor();
                 for (Animal a: lists1.get(2)) {
-                    try {
-                        a.runRoad();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    Runnable runnable = (Runnable) a;
+                    executor.execute(runnable);;
+                }
+                executor.shutdown();
+                while (!executor.isTerminated()) {
+
                 }
                 System.out.println("Thread Leo Done");
                 localDateTimeHashMap.put("Leo",LocalDateTime.now());
@@ -100,7 +107,9 @@ public class Road {
         thread1.start();
         thread2.start();
         thread3.start();
-        Thread.sleep(37000);
+        thread1.join();
+        thread2.join();
+        thread3.join();
         System.out.println(localDateTimeHashMap);
     }
 }

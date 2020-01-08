@@ -2,7 +2,7 @@ package TTCFresher;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Leo implements Animal{
+public class Leo implements Animal,Runnable{
     private String name = "LEO";
     private Long id;
     private double step;
@@ -68,5 +68,22 @@ public class Leo implements Animal{
             Thread.sleep(10);
         }
         System.out.println(this.name + " id: " + this.id + " done");
+    }
+    @Override
+    public void run() {
+        System.out.println(this.name + " id: " + this.id + " start");
+        int count = 0;
+        while (count<= this.sizeRoad){
+            count += this.step*this.timeStep/10000;
+            processCommand();
+        }
+        System.out.println(this.name + " id: " + this.id + " done");
+    }
+    private void processCommand() {
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
