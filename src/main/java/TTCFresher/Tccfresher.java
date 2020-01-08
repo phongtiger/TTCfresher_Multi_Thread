@@ -1,6 +1,8 @@
 package TTCFresher;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Tccfresher {
@@ -41,55 +43,61 @@ public class Tccfresher {
         return leoList;
     }
 
-    public static void main(String[] args) {
-        List<List<Animal>> lists = getListListAnimal();
-        Road road = new ConcreteBuilder()
-                .setAllListAnimal(lists)
-                .setNumberOfAnimal(10)
-                .setSizeRoad(1000)
-                .build();
-        road.playRoad();
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                for (Cat a: getCats(10,1000)) {
-//                    try {
-//                        a.runRoad();
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//                System.out.println(" Luong Cat");
-//            }
-//        });
-//        Thread thread2 = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                for (Dog a: getDogs(10,1000)) {
-//                    try {
-//                        a.runRoad();
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//                System.out.println(" Luong Dog");
-//            }
-//        });
-//        Thread thread3 = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                for (Leo a: getLeos(10,1000)) {
-//                    try {
-//                        a.runRoad();
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//                System.out.println("Luong Leo");
-//            }
-//        });
-//        thread.start();
-//        thread2.start();
-//        thread3.start();
+    public static void main(String[] args) throws InterruptedException {
+//        List<List<Animal>> lists = getListListAnimal();
+//        Road road = new ConcreteBuilder()
+//                .setAllListAnimal(lists)
+//                .setNumberOfAnimal(10)
+//                .setSizeRoad(10000)
+//                .build();
+//        road.playRoad();
+        HashMap<String,LocalDateTime> localDateTimeHashMap = new HashMap<>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (Cat a: getCats(10,1000)) {
+                    try {
+                        a.runRoad();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println(" Thread Cat");
+                localDateTimeHashMap.put("Cat",LocalDateTime.now());
+            }
+        });
+        Thread thread2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (Dog a: getDogs(10,1000)) {
+                    try {
+                        a.runRoad();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println(" Thread Dog");
+                localDateTimeHashMap.put("Dog",LocalDateTime.now());
+            }
+        });
+        Thread thread3 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (Leo a: getLeos(10,1000)) {
+                    try {
+                        a.runRoad();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println("Thread Leo");
+                localDateTimeHashMap.put("Leo",LocalDateTime.now());
+            }
+        });
+        thread.start();
+        thread2.start();
+        thread3.start();
+        Thread.sleep(37000);
+        System.out.println(localDateTimeHashMap);
     }
 }

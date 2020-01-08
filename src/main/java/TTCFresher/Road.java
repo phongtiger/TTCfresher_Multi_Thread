@@ -1,6 +1,11 @@
 package TTCFresher;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class Road {
     private List<List<Animal>> lists1;
@@ -39,8 +44,13 @@ public class Road {
     public void setSizeRoad(int sizeRoad) {
         this.sizeRoad = sizeRoad;
     }
+
     public void playRoad(){
-        Thread thread = new Thread(new Runnable() {
+        HashMap<String,LocalDateTime> localDateTimeHashMap = new HashMap<>();
+        Thread thread1;
+        Thread thread2;
+        Thread thread3;
+        thread1= new Thread(new Runnable() {
             @Override
             public void run() {
                 for (Animal a: lists1.get(0)) {
@@ -50,10 +60,12 @@ public class Road {
                         e.printStackTrace();
                     }
                 }
+
                 System.out.println(" Thread Cat Done");
+                localDateTimeHashMap.put("Cat",LocalDateTime.now());
             }
         });
-        Thread thread2 = new Thread(new Runnable() {
+        thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
                 for (Animal a: lists1.get(1)) {
@@ -64,9 +76,11 @@ public class Road {
                     }
                 }
                 System.out.println(" Thread Dog Done");
+                localDateTimeHashMap.put("Dog",LocalDateTime.now());
+
             }
         });
-        Thread thread3 = new Thread(new Runnable() {
+        thread3 = new Thread(new Runnable() {
             @Override
             public void run() {
                 for (Animal a: lists1.get(2)) {
@@ -77,10 +91,13 @@ public class Road {
                     }
                 }
                 System.out.println("Thread Leo Done");
+
+
             }
         });
-        thread.start();
+        thread1.start();
         thread2.start();
         thread3.start();
+
     }
 }

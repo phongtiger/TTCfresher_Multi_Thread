@@ -67,7 +67,7 @@ public class Cat implements Animal{
         int count = 0;
         while (count<= this.sizeRoad){
             count += this.step*this.timeStep/10000;
-            Thread.sleep(100);
+            Thread.sleep(10);
         }
         System.out.println(NAME + " id: " + this.id + " done");
     }
