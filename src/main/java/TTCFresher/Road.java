@@ -2,10 +2,7 @@ package TTCFresher;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -48,16 +45,15 @@ public class Road {
     }
 
     public void playRoad() throws InterruptedException {
-        HashMap<String,LocalDateTime> localDateTimeHashMap = new HashMap<>();
+        HashMap<String,Long> localDateTimeHashMap = new HashMap<>();
         Thread thread1;
         Thread thread2;
         Thread thread3;
-        for (List<Animal> animal: this.lists1) {
 
-        }
         thread1= new Thread(new Runnable() {
             @Override
             public void run() {
+                Date start1 = new Date();
                 ExecutorService executor = Executors.newSingleThreadExecutor();
                 for (Animal a: lists1.get(0)) {
                     Runnable runnable = (Runnable) a;
@@ -68,12 +64,14 @@ public class Road {
 
                 }
                 System.out.println(" Thread Cat Done");
-                localDateTimeHashMap.put("Cat",LocalDateTime.now());
+                Date stop1 = new Date();
+                localDateTimeHashMap.put("Cat",stop1.getTime()-start1.getTime());
             }
         });
         thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
+                Date start1 = new Date();
                 ExecutorService executor = Executors.newSingleThreadExecutor();
                 for (Animal a: lists1.get(1)) {
                     Runnable runnable = (Runnable) a;
@@ -84,13 +82,15 @@ public class Road {
 
                 }
                 System.out.println(" Thread Dog Done");
-                localDateTimeHashMap.put("Dog",LocalDateTime.now());
+                Date stop1 = new Date();
+                localDateTimeHashMap.put("Dog",stop1.getTime()-start1.getTime());
 
             }
         });
         thread3 = new Thread(new Runnable() {
             @Override
             public void run() {
+                Date start1 = new Date();
                 ExecutorService executor = Executors.newSingleThreadExecutor();
                 for (Animal a: lists1.get(2)) {
                     Runnable runnable = (Runnable) a;
@@ -101,7 +101,8 @@ public class Road {
 
                 }
                 System.out.println("Thread Leo Done");
-                localDateTimeHashMap.put("Leo",LocalDateTime.now());
+                Date stop1 = new Date();
+                localDateTimeHashMap.put("Leo",stop1.getTime()-start1.getTime());
             }
         });
         thread1.start();
