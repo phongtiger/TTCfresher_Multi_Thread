@@ -27,9 +27,8 @@ public class Tccfresher {
                 .setSizeRoad(10000)
                 .build();
         //Khong gioi han luong
-        road.playRoadUnLimit();
+//        road.playRoadUnLimit();
         //Co gioi han luong
-//        road.playRoadNew();
-
+        road.playRoadNew();
     }
 }

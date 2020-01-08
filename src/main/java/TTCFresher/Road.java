@@ -3,6 +3,8 @@ package TTCFresher;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class Road {
     private List<List<Animal>> lists1;
@@ -76,16 +78,19 @@ public class Road {
         executor.shutdown();
 
     }
-    public void playRoadNew(){
+    public void playRoadNew() throws InterruptedException {
         final int NUM_OF_THREAD = 2;
-        ExecutorService executor = Executors.newFixedThreadPool(NUM_OF_THREAD);
+        final int INITIAL_DELAY = 1; // second
+        final int DELAY = 3; // second
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(NUM_OF_THREAD);
 
         List<Runnable> listRun = getRunList();
 
         for (Runnable r: listRun
              ) {
-            executor.execute(r);
+            executor.scheduleWithFixedDelay(r, INITIAL_DELAY, DELAY, TimeUnit.SECONDS);;
         }
+        executor.awaitTermination(3, TimeUnit.SECONDS);
         executor.shutdown();
 
     }
