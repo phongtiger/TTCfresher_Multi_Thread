@@ -7,5 +7,4 @@ public interface RoadBuilder {
     RoadBuilder setNumberOfAnimal( int numberOfAnimal);
     RoadBuilder setSizeRoad(int sizeRoad);
     Road build();
-
 }

@@ -1,9 +1,5 @@
 package TTCFresher;
 
-import java.sql.Time;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -115,74 +111,38 @@ public class Road {
         thread3.join();
         System.out.println(localDateTimeHashMap);
     }
+    public List<Runnable> getRunList(){
+        List<Runnable> runnableList = new ArrayList<>();
+        for (List<Animal> l: lists1
+             ) {
+            Runnable runnable = new Thread((() -> {
+                ExecutorService executor1 = Executors.newSingleThreadExecutor();
+                for (Animal a: l) {
+                    Runnable runnable1 = (Runnable) a;
+                    executor1.execute(runnable1);;
+                }
+                executor1.shutdown();
+                while (!executor1.isTerminated()) {
+
+                }
+                System.out.println(" Thread: "+Thread.currentThread().getName() + l.get(0).runRoad() + " Done");
+
+            }));
+            runnableList.add(runnable);
+        }
+        return runnableList;
+    }
     public void playRoadNew(){
-        String pattern = " HH:mm:ss:SSSS";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        HashMap<String,String> localDateTimeHashMap = new HashMap<>();
         final int NUM_OF_THREAD = 2;
         ExecutorService executor = Executors.newFixedThreadPool(NUM_OF_THREAD);
-        Runnable thread1;
-        Runnable thread2;
-        Runnable thread3;
-        thread1= new Thread(() -> {
-            ExecutorService executor1 = Executors.newSingleThreadExecutor();
-            for (Animal a: lists1.get(0)) {
-                Runnable runnable = (Runnable) a;
-                executor1.execute(runnable);;
-            }
-            executor1.shutdown();
-            while (!executor1.isTerminated()) {
 
-            }
-            System.out.println(" Thread Cat Done");
-            Date date1 = new Date();
-            String date = simpleDateFormat.format(date1);
-            localDateTimeHashMap.put("Cat",date);
-        });
-        thread2 = new Thread(() -> {
-            ExecutorService executor12 = Executors.newSingleThreadExecutor();
-            for (Animal a: lists1.get(1)) {
-                Runnable runnable = (Runnable) a;
-                executor12.execute(runnable);;
-            }
-            executor12.shutdown();
-            while (!executor12.isTerminated()) {
+        List<Runnable> listRun = getRunList();
 
-            }
-            System.out.println(" Thread Dog Done");
-            Date stop1 = new Date();
-            String date = simpleDateFormat.format(stop1);
-            localDateTimeHashMap.put("Dog",date);
-
-        });
-        thread3 = new Thread(() -> {
-            ExecutorService executor13 = Executors.newSingleThreadExecutor();
-            for (Animal a: lists1.get(2)) {
-                Runnable runnable = (Runnable) a;
-                executor13.execute(runnable);;
-            }
-            executor13.shutdown();
-            while (!executor13.isTerminated()) {
-
-            }
-            System.out.println("Thread Leo Done");
-            Date stop1 = new Date();
-            String date = simpleDateFormat.format(stop1);
-            localDateTimeHashMap.put("Leo",date);
-        });
-        List<Runnable> runnables = new ArrayList<>();
-        runnables.add(thread1);
-        runnables.add(thread2);
-        runnables.add(thread3);
-        for (Runnable r: runnables
+        for (Runnable r: listRun
              ) {
             executor.execute(r);
         }
         executor.shutdown();
 
-        while (!executor.isTerminated()) {
-
-        }
-        System.out.println(localDateTimeHashMap);
     }
 }

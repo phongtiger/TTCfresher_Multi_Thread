@@ -1,5 +1,7 @@
 package TTCFresher;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Dog implements Animal,Runnable {
@@ -58,7 +60,11 @@ public class Dog implements Animal,Runnable {
     }
 
     @Override
-    public void runRoad() {
+    public String runRoad(){
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss.SSSS");
+        String dateString = simpleDateFormat.format(date);
+        return " "+this.name+ " "+dateString+" ";
     }
     @Override
     public void run() {
