@@ -3,7 +3,7 @@ package TTCFresher;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Dog implements Animal {
-    private static final String NAME = "DOG";
+    private String name = "DOG";
     private Long id;
     private double step;
     private int timeStep;
@@ -33,10 +33,6 @@ public class Dog implements Animal {
         this.sizeRoad = sizeRoad;
     }
 
-    public static String getNAME() {
-        return NAME;
-    }
-
     public long getId() {
         return id;
     }
@@ -63,13 +59,13 @@ public class Dog implements Animal {
 
     @Override
     public void runRoad() throws InterruptedException {
-        System.out.println(NAME + " id: " + this.id + " start");
+        System.out.println(this.name + " id: " + this.id + " start");
         int count = 0;
         while (count<= this.sizeRoad){
             count += this.step*this.timeStep/10000;
             Thread.sleep(10);
         }
-        System.out.println(NAME + " id: " + this.id + " done");
+        System.out.println(this.name + " id: " + this.id + " done");
     }
 
 }

@@ -45,11 +45,14 @@ public class Road {
         this.sizeRoad = sizeRoad;
     }
 
-    public void playRoad(){
+    public void playRoad() throws InterruptedException {
         HashMap<String,LocalDateTime> localDateTimeHashMap = new HashMap<>();
         Thread thread1;
         Thread thread2;
         Thread thread3;
+        for (List<Animal> animal: this.lists1) {
+
+        }
         thread1= new Thread(new Runnable() {
             @Override
             public void run() {
@@ -91,13 +94,13 @@ public class Road {
                     }
                 }
                 System.out.println("Thread Leo Done");
-
-
+                localDateTimeHashMap.put("Leo",LocalDateTime.now());
             }
         });
         thread1.start();
         thread2.start();
         thread3.start();
-
+        Thread.sleep(37000);
+        System.out.println(localDateTimeHashMap);
     }
 }
