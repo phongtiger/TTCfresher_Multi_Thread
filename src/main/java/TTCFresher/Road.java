@@ -10,38 +10,20 @@ public class Road {
     private List<List<Animal>> lists1;
     private int numberAnimalOnce;
     private int sizeRoad;
+    private int numberOfThread;
+    private int initialDelay;
+    private int delay;
 
     public Road() {
     }
 
-    public Road(List<List<Animal>> lists1, int numberAnimalOnce, int sizeRoad) {
+    public Road(List<List<Animal>> lists1, int numberAnimalOnce, int sizeRoad, int numberOfThread, int initialDelay, int delay) {
         this.lists1 = lists1;
         this.numberAnimalOnce = numberAnimalOnce;
         this.sizeRoad = sizeRoad;
-    }
-
-    public List<List<Animal>> getLists1() {
-        return lists1;
-    }
-
-    public void setLists1(List<List<Animal>> lists1) {
-        this.lists1 = lists1;
-    }
-
-    public int getNumberAnimalOnce() {
-        return numberAnimalOnce;
-    }
-
-    public void setNumberAnimalOnce(int numberAnimalOnce) {
-        this.numberAnimalOnce = numberAnimalOnce;
-    }
-
-    public int getSizeRoad() {
-        return sizeRoad;
-    }
-
-    public void setSizeRoad(int sizeRoad) {
-        this.sizeRoad = sizeRoad;
+        this.numberOfThread = numberOfThread;
+        this.initialDelay = initialDelay;
+        this.delay = delay;
     }
 
     public List<Runnable> getRunList(){
@@ -79,16 +61,13 @@ public class Road {
 
     }
     public void playRoadNew() throws InterruptedException {
-        final int NUM_OF_THREAD = 2;
-        final int INITIAL_DELAY = 1; // second
-        final int DELAY = 3; // second
-        ScheduledExecutorService executor = Executors.newScheduledThreadPool(NUM_OF_THREAD);
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(numberOfThread);
 
         List<Runnable> listRun = getRunList();
 
         for (Runnable r: listRun
              ) {
-            executor.scheduleWithFixedDelay(r, INITIAL_DELAY, DELAY, TimeUnit.SECONDS);;
+            executor.scheduleWithFixedDelay(r, initialDelay, delay, TimeUnit.SECONDS);;
         }
         executor.awaitTermination(3, TimeUnit.SECONDS);
         executor.shutdown();

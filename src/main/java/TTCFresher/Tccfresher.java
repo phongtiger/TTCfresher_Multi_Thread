@@ -25,6 +25,9 @@ public class Tccfresher {
                 .setAllListAnimal(lists)
                 .setNumberOfAnimal(10)
                 .setSizeRoad(10000)
+                .setNumberOfThread(2)
+                .setSecondInitialDelay(1)
+                .setSecondDelay(1)
                 .build();
         //Khong gioi han luong
 //        road.playRoadUnLimit();
