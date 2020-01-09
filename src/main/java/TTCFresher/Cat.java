@@ -21,13 +21,6 @@ public class Cat implements Animal,Runnable{
     public Cat() {
     }
 
-    public Cat(long i) {
-        this.id = id;
-        this.step = ThreadLocalRandom.current().nextDouble(30, 50);
-        this.timeStep = ThreadLocalRandom.current().nextInt(900, 1000);
-    }
-
-
     public long getId() {
         return id;
     }

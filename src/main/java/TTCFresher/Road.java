@@ -13,17 +13,21 @@ public class Road {
     private int numberOfThread;
     private int initialDelay;
     private int delay;
+    private int awaitTermination;
+    private TimeUnit timeUnit;
 
     public Road() {
     }
 
-    public Road(List<List<Animal>> lists1, int numberAnimalOnce, int sizeRoad, int numberOfThread, int initialDelay, int delay) {
+    public Road(List<List<Animal>> lists1, int numberAnimalOnce, int sizeRoad, int numberOfThread, int initialDelay, int delay, int awaitTermination, TimeUnit timeUnit) {
         this.lists1 = lists1;
         this.numberAnimalOnce = numberAnimalOnce;
         this.sizeRoad = sizeRoad;
         this.numberOfThread = numberOfThread;
         this.initialDelay = initialDelay;
         this.delay = delay;
+        this.awaitTermination = awaitTermination;
+        this.timeUnit = timeUnit;
     }
 
     public List<Runnable> getRunList(){
@@ -40,7 +44,7 @@ public class Road {
                 while (!executor1.isTerminated()) {
 
                 }
-                System.out.println(" Thread: "+Thread.currentThread().getName() + l.get(0).runRoad() + " Done");
+                System.out.println(" Thread: "+ l.get(0).runRoad() + " Done");
 
             }));
             runnableList.add(runnable);
@@ -69,7 +73,7 @@ public class Road {
              ) {
             executor.scheduleWithFixedDelay(r, initialDelay, delay, TimeUnit.SECONDS);;
         }
-        executor.awaitTermination(3, TimeUnit.SECONDS);
+        executor.awaitTermination(awaitTermination, timeUnit);
         executor.shutdown();
 
     }

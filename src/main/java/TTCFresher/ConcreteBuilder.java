@@ -1,6 +1,7 @@
 package TTCFresher;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class ConcreteBuilder implements RoadBuilder {
     private List<List<Animal>> animals1;
@@ -9,6 +10,8 @@ public class ConcreteBuilder implements RoadBuilder {
     private int numberOfThread;
     private int initialDelay;
     private int delay;
+    private int awaitTermination;
+    private TimeUnit timeUnit;
 
     @Override
     public RoadBuilder setAllListAnimal(List<List<Animal>> listListAnimal) {
@@ -47,7 +50,19 @@ public class ConcreteBuilder implements RoadBuilder {
     }
 
     @Override
+    public RoadBuilder setAwaitTermination(int awaitTermination) {
+        this.awaitTermination = awaitTermination;
+        return this;
+    }
+
+    @Override
+    public RoadBuilder setTimeUnit(TimeUnit timeUnit) {
+        this.timeUnit = timeUnit;
+        return this;
+    }
+
+    @Override
     public Road build() {
-        return new Road(animals1,numberAnimal,size,numberOfThread,initialDelay,delay);
+        return new Road(animals1,numberAnimal,size,numberOfThread,initialDelay,delay,awaitTermination,timeUnit);
     }
 }

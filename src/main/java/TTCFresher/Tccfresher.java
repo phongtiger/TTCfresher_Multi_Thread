@@ -2,6 +2,7 @@ package TTCFresher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Tccfresher {
 
@@ -28,6 +29,8 @@ public class Tccfresher {
                 .setNumberOfThread(2)
                 .setSecondInitialDelay(1)
                 .setSecondDelay(1)
+                .setAwaitTermination(40)
+                .setTimeUnit(TimeUnit.SECONDS)
                 .build();
         //Khong gioi han luong
 //        road.playRoadUnLimit();
