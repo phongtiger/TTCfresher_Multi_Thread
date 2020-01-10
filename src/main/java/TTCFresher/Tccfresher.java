@@ -1,38 +1,24 @@
 package TTCFresher;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Tccfresher {
 
-    private static List<List<Animal>> getListListAnimal(int n,int sizeRoad){
-        List<List<Animal>> lists = new ArrayList<>();
-        for(AnimalType a: AnimalType.values()){
-            List<Animal> catList = new ArrayList<>();
-            for(int i = 0; i< n; i++){
-                catList.add(new AnimalFactory().getAnimal(a,i,sizeRoad));
-            }
-            lists.add(catList);
-        }
-        return lists;
-    }
+
 
     public static void main(String[] args) throws InterruptedException {
         int n = 10;
         int sizeRoad = 1000;
-        List<List<Animal>> lists = getListListAnimal(n,sizeRoad);
         Road road = new ConcreteBuilder()
-                .setAllListAnimal(lists)
-                .setNumberOfAnimal(10)
-                .setSizeRoad(10000)
-                .setNumberOfThread(2)
+                .setNumberOfAnimal(n)
+                .setSizeRoad(sizeRoad)
+                .setNumberOfThread(3)
                 .setSecondInitialDelay(1)
-                .setSecondDelay(1)
+                .setSecondDelay(10)
                 .setAwaitTermination(40)
                 .setTimeUnit(TimeUnit.SECONDS)
                 .build();
-        //Khong gioi han luong
+       // Khong gioi han luong
 //        road.playRoadUnLimit();
         //Co gioi han luong
         road.playRoadNew();

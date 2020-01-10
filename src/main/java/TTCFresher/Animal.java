@@ -1,5 +1,5 @@
 package TTCFresher;
 
 public interface Animal {
-    String runRoad();
+    String endRoad();
 }

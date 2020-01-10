@@ -1,10 +1,9 @@
 package TTCFresher;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Dog implements Animal,Runnable {
+public class Dog extends AbstractAnimal implements Animal, Runnable {
     private String name = "DOG";
     private Long id;
     private double step;
@@ -59,29 +58,18 @@ public class Dog implements Animal,Runnable {
         this.timeStep = timeStep;
     }
 
-    @Override
-    public String runRoad(){
-        Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss.SSSS");
-        String dateString = simpleDateFormat.format(date);
-        return " "+this.name+ " "+dateString+" ";
+    public synchronized void runDog() {
+        super.runAnimal(this.id, this.name, this.sizeRoad, this.step, this.timeStep);
     }
+
+    @Override
+    public String endRoad() {
+        return super.showTime(this.name);
+    }
+
     @Override
     public void run() {
-        System.out.println(this.name + " id: " + this.id + " start");
-        int count = 0;
-        while (count<= this.sizeRoad){
-            count += this.step*this.timeStep/10000;
-            processCommand();
-        }
-        System.out.println(this.name + " id: " + this.id + " done");
-    }
-    private void processCommand() {
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        runDog();
     }
 
 }

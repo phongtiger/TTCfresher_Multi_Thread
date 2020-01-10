@@ -14,12 +14,6 @@ public class ConcreteBuilder implements RoadBuilder {
     private TimeUnit timeUnit;
 
     @Override
-    public RoadBuilder setAllListAnimal(List<List<Animal>> listListAnimal) {
-        this.animals1 = listListAnimal;
-        return this;
-    }
-
-    @Override
     public RoadBuilder setNumberOfAnimal(int numberOfAnimal) {
         this.numberAnimal = numberOfAnimal;
         return this;
@@ -63,6 +57,6 @@ public class ConcreteBuilder implements RoadBuilder {
 
     @Override
     public Road build() {
-        return new Road(animals1,numberAnimal,size,numberOfThread,initialDelay,delay,awaitTermination,timeUnit);
+        return new Road(animals1, numberAnimal, size, numberOfThread, initialDelay, delay, awaitTermination, timeUnit);
     }
 }

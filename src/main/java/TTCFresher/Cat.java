@@ -1,17 +1,16 @@
 package TTCFresher;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Cat implements Animal,Runnable{
-    private  String name = "CAT";
+public class Cat extends AbstractAnimal implements Animal,Runnable{
+    private String name = "CAT";
     private Long id;
     private double step;
     private int timeStep;
     private int sizeRoad;
 
-    public Cat(Long id,int sizeRoad) {
+    public Cat(Long id, int sizeRoad) {
         this.id = id;
         this.step = ThreadLocalRandom.current().nextDouble(30, 50);
         this.timeStep = ThreadLocalRandom.current().nextInt(900, 1000);
@@ -53,29 +52,17 @@ public class Cat implements Animal,Runnable{
         this.sizeRoad = sizeRoad;
     }
 
+    public synchronized void runCat() {
+        super.runAnimal(this.id, this.name, this.sizeRoad, this.step, this.timeStep);
+    }
+
     @Override
-    public String runRoad(){
-        Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss.SSSS");
-        String dateString = simpleDateFormat.format(date);
-        return " "+this.name+ " "+dateString+" ";
+    public String endRoad() {
+        return super.showTime(this.name);
     }
 
     @Override
     public void run() {
-        System.out.println(this.name + " id: " + this.id + " start");
-        int count = 0;
-        while (count<= this.sizeRoad){
-            count += this.step*this.timeStep/10000;
-            processCommand();
-        }
-        System.out.println(this.name + " id: " + this.id + " done");
-    }
-    private void processCommand() {
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        runCat();
     }
 }

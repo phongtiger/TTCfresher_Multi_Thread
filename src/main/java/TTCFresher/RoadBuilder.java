@@ -1,10 +1,8 @@
 package TTCFresher;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public interface RoadBuilder {
-    RoadBuilder setAllListAnimal(List<List<Animal>> listListAnimal);
     RoadBuilder setNumberOfAnimal( int numberOfAnimal);
     RoadBuilder setSizeRoad(int sizeRoad);
     RoadBuilder setNumberOfThread( int numberOfThread);
