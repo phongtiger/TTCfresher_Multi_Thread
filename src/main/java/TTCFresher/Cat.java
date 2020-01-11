@@ -1,9 +1,8 @@
 package TTCFresher;
 
-import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Cat extends AbstractAnimal implements Animal,Runnable{
+public class Cat extends AbstractAnimal implements Animal, Runnable {
     private String name = "CAT";
     private Long id;
     private double step;
@@ -53,7 +52,21 @@ public class Cat extends AbstractAnimal implements Animal,Runnable{
     }
 
     public synchronized void runCat() {
-        super.runAnimal(this.id, this.name, this.sizeRoad, this.step, this.timeStep);
+        System.out.println(name + " id: " + id + " start");
+        int count = 0;
+        while (count <= sizeRoad) {
+            count += step;
+            this.processCommand(timeStep);
+        }
+        System.out.println(name + " id: " + id + " done");
+    }
+
+    private void processCommand(int timeStep) {
+        try {
+            Thread.sleep(timeStep);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

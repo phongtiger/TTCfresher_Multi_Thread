@@ -3,16 +3,13 @@ package TTCFresher;
 import java.util.concurrent.TimeUnit;
 
 public class Tccfresher {
-
-
-
     public static void main(String[] args) throws InterruptedException {
         int n = 10;
         int sizeRoad = 1000;
         Road road = new ConcreteBuilder()
                 .setNumberOfAnimal(n)
                 .setSizeRoad(sizeRoad)
-                .setNumberOfThread(3)
+                .setNumberOfThread(20)
                 .setSecondInitialDelay(1)
                 .setSecondDelay(10)
                 .setAwaitTermination(40)

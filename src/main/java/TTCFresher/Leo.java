@@ -58,8 +58,23 @@ public class Leo extends AbstractAnimal implements Animal,Runnable{
     public void setTimeStep(int timeStep) {
         this.timeStep = timeStep;
     }
-    public synchronized void runLeo(){
-        super.runAnimal(this.id,this.name,this.sizeRoad,this.step,this.timeStep);
+
+    public synchronized void runLeo() {
+        System.out.println(name + " id: " + id + " start");
+        int count = 0;
+        while (count <= sizeRoad) {
+            count += step;
+            this.processCommand(timeStep);
+        }
+        System.out.println(name + " id: " + id + " done");
+    }
+
+    private void processCommand(int timeStep) {
+        try {
+            Thread.sleep(timeStep);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

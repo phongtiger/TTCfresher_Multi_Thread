@@ -62,7 +62,6 @@ public class Road {
                 for (Animal a : l) {
                     Runnable runnable1 = (Runnable) a;
                     executor1.execute(runnable1);
-                    ;
                 }
                 executor1.shutdown();
                 while (!executor1.isTerminated()) {
@@ -101,12 +100,11 @@ public class Road {
     }
 
     public void playRoadNew() throws InterruptedException {
-        ScheduledExecutorService executor = Executors.newScheduledThreadPool(15);
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(numberOfThread);
         List<Thread> listRun = getRunListThreadPool();
         for (Thread r : listRun
         ) {
             executor.scheduleWithFixedDelay(r, initialDelay, delay, TimeUnit.SECONDS);
-            ;
         }
         executor.awaitTermination(awaitTermination, timeUnit);
         executor.shutdown();
