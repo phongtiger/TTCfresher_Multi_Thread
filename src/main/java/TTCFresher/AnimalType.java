@@ -1,5 +1,5 @@
 package TTCFresher;
 
 public enum AnimalType {
-    CAT,DOG,LEO;
+    CAT, DOG, LEO
 }

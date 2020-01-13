@@ -46,7 +46,7 @@ public class Road {
     public List<Animal> getListThreadPool() {
         List<Animal> animalsList = new ArrayList<>();
         for (AnimalType a : AnimalType.values()) {
-            for (int i = 0; i < this.numberAnimalOnce; i++) {
+            for (int i = 0; i <= this.numberAnimalOnce; i++) {
                 animalsList.add(new AnimalFactory().getAnimal(a, i, this.sizeRoad));
             }
         }
@@ -75,17 +75,6 @@ public class Road {
         return runnableList;
     }
 
-    public List<Thread> getRunListThreadPool() {
-        List<Thread> runList = new ArrayList<>();
-        for (List<Animal> l : getListListAnimal()
-        ) {
-            for (Animal animal : l) {
-                Thread runnable = new Thread((Runnable) animal);
-                runList.add(runnable);
-            }
-        }
-        return runList;
-    }
 
     public void playRoadUnLimit() {
         ExecutorService executor = Executors.newCachedThreadPool();
@@ -101,12 +90,48 @@ public class Road {
 
     public void playRoadNew() throws InterruptedException {
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(numberOfThread);
-        List<Thread> listRun = getRunListThreadPool();
-        for (Thread r : listRun
+        List<Animal> listAnimal = getListThreadPool();
+        HashMap<String, LinkedList<Animal>> stringLinkedListHashMap = new HashMap<>();
+        for (Animal animal : listAnimal
         ) {
-            executor.scheduleWithFixedDelay(r, initialDelay, delay, TimeUnit.SECONDS);
+            switch (animal.getInfo()) {
+                case "CAT":
+                    if (!stringLinkedListHashMap.containsKey("CAT")) {
+                        stringLinkedListHashMap.put("CAT", new LinkedList<>());
+                    } else if (stringLinkedListHashMap.containsKey("CAT")) {
+                        stringLinkedListHashMap.get("CAT").add(animal);
+                    }
+                    break;
+                case "LEO":
+                    if (!stringLinkedListHashMap.containsKey("LEO")) {
+                        stringLinkedListHashMap.put("LEO", new LinkedList<>());
+                    } else if (stringLinkedListHashMap.containsKey("LEO")) {
+                        stringLinkedListHashMap.get("LEO").add(animal);
+                    }
+                    break;
+                case "DOG":
+                    if (!stringLinkedListHashMap.containsKey("DOG")) {
+                        stringLinkedListHashMap.put("DOG", new LinkedList<>());
+                    } else if (stringLinkedListHashMap.containsKey("DOG")) {
+                        stringLinkedListHashMap.get("DOG").add(animal);
+                    }
+                    break;
+            }
         }
-        executor.awaitTermination(awaitTermination, timeUnit);
+        LinkedList<Animal> cat = stringLinkedListHashMap.get(AnimalType.CAT.toString());
+        LinkedList<Animal> dog = stringLinkedListHashMap.get(AnimalType.DOG.toString());
+        LinkedList<Animal> leo = stringLinkedListHashMap.get(AnimalType.LEO.toString());
+
+        for (int i = 0; i < numberAnimalOnce - 1; i++) {
+            cat.get(i).setNext((Runnable) cat.get(i + 1));
+            dog.get(i).setNext((Runnable) dog.get(i + 1));
+            leo.get(i).setNext((Runnable) leo.get(i + 1));
+        }
+        executor.scheduleWithFixedDelay((Runnable) cat.get(0),initialDelay,delay,timeUnit);
+        executor.scheduleWithFixedDelay((Runnable) dog.get(0),initialDelay,delay,timeUnit);
+        executor.scheduleWithFixedDelay((Runnable) leo.get(0),initialDelay,delay,timeUnit);
+        executor.awaitTermination(awaitTermination, TimeUnit.SECONDS);
         executor.shutdown();
     }
 }
+

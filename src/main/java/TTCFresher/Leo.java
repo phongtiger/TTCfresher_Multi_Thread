@@ -8,6 +8,7 @@ public class Leo extends AbstractAnimal implements Animal,Runnable{
     private double step;
     private int timeStep;
     private int sizeRoad;
+    private Runnable next;
 
     public Leo(Long id) {
         this.id = id;
@@ -59,26 +60,25 @@ public class Leo extends AbstractAnimal implements Animal,Runnable{
         this.timeStep = timeStep;
     }
 
-    public synchronized void runLeo() {
-        System.out.println(name + " id: " + id + " start");
-        int count = 0;
-        while (count <= sizeRoad) {
-            count += step;
-            this.processCommand(timeStep);
-        }
-        System.out.println(name + " id: " + id + " done");
+    public Runnable getNext() {
+        return next;
+    }
+    @Override
+    public void setNext(Runnable next) {
+        this.next = next;
     }
 
-    private void processCommand(int timeStep) {
-        try {
-            Thread.sleep(timeStep);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void runLeo() {
+        super.catRun(id, name, sizeRoad, step, timeStep,next);
     }
 
     @Override
-    public String endRoad(){
+    public String getInfo() {
+        return this.name;
+    }
+
+    @Override
+    public String endRoad() {
         return super.showTime(this.name);
     }
 

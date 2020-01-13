@@ -9,6 +9,7 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
     private double step;
     private int timeStep;
     private int sizeRoad;
+    private Runnable next;
 
     public Dog(Long id, int sizeRoad) {
         this.id = id;
@@ -32,6 +33,14 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
 
     public void setSizeRoad(int sizeRoad) {
         this.sizeRoad = sizeRoad;
+    }
+
+    public Runnable getNext() {
+        return next;
+    }
+    @Override
+    public void setNext(Runnable next) {
+        this.next = next;
     }
 
     public long getId() {
@@ -58,22 +67,13 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
         this.timeStep = timeStep;
     }
 
-    public synchronized void runDog() {
-        System.out.println(name + " id: " + id + " start");
-        int count = 0;
-        while (count <= sizeRoad) {
-            count += step;
-            this.processCommand(timeStep);
-        }
-        System.out.println(name + " id: " + id + " done");
+    public void runDog() {
+        super.catRun(id, name, sizeRoad, step, timeStep,next);
     }
 
-    private void processCommand(int timeStep) {
-        try {
-            Thread.sleep(timeStep);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public String getInfo() {
+        return this.name;
     }
 
     @Override

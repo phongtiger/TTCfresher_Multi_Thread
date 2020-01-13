@@ -9,10 +9,10 @@ public class Tccfresher {
         Road road = new ConcreteBuilder()
                 .setNumberOfAnimal(n)
                 .setSizeRoad(sizeRoad)
-                .setNumberOfThread(20)
+                .setNumberOfThread(3)
                 .setSecondInitialDelay(1)
-                .setSecondDelay(10)
-                .setAwaitTermination(40)
+                .setSecondDelay(1)
+                .setAwaitTermination(100)
                 .setTimeUnit(TimeUnit.SECONDS)
                 .build();
        // Khong gioi han luong
