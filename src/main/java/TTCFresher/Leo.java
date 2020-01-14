@@ -1,14 +1,18 @@
 package TTCFresher;
 
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-public class Leo extends AbstractAnimal implements Animal,Runnable{
+public class Leo extends AbstractAnimal implements Animal, Runnable {
     private String name = "LEO";
     private Long id;
     private double step;
     private int timeStep;
     private int sizeRoad;
     private Runnable next;
+    private ExecutorService executor;
 
     public Leo(Long id) {
         this.id = id;
@@ -63,14 +67,18 @@ public class Leo extends AbstractAnimal implements Animal,Runnable{
     public Runnable getNext() {
         return next;
     }
+
+
     @Override
     public void setNext(Runnable next) {
         this.next = next;
     }
 
-    public void runLeo() {
-        super.catRun(id, name, sizeRoad, step, timeStep,next);
+    @Override
+    public void setThreadPoolExecutor(ExecutorService executor) {
+        this.executor = executor;
     }
+
 
     @Override
     public String getInfo() {
@@ -84,6 +92,6 @@ public class Leo extends AbstractAnimal implements Animal,Runnable{
 
     @Override
     public void run() {
-        runLeo();
+        super.catRun(id, name, sizeRoad, step, timeStep, next, executor);
     }
 }

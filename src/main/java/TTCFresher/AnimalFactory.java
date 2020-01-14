@@ -1,7 +1,7 @@
 package TTCFresher;
 
 public class AnimalFactory {
-    public Animal getAnimal(AnimalType animalType,long i, int road){
+    public Animal getAnimal(AnimalType animalType, long i, int road){
         Animal animal = null;
         switch (animalType){
             case DOG:

@@ -1,7 +1,6 @@
 package TTCFresher;
 
-import java.util.Objects;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.*;
 
 public class Dog extends AbstractAnimal implements Animal, Runnable {
     private String name = "DOG";
@@ -10,6 +9,7 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
     private int timeStep;
     private int sizeRoad;
     private Runnable next;
+    private ExecutorService executor;
 
     public Dog(Long id, int sizeRoad) {
         this.id = id;
@@ -21,11 +21,16 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
     public Dog() {
     }
 
-    public Dog(long i) {
-        this.id = id;
-        this.step = ThreadLocalRandom.current().nextDouble(60, 70);
-        this.timeStep = ThreadLocalRandom.current().nextInt(500, 700);
+    @Override
+    public void setNext(Runnable next) {
+        this.next = next;
     }
+
+    @Override
+    public void setThreadPoolExecutor(ExecutorService executor) {
+        this.executor = executor;
+    }
+
 
     public int getSizeRoad() {
         return sizeRoad;
@@ -38,10 +43,7 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
     public Runnable getNext() {
         return next;
     }
-    @Override
-    public void setNext(Runnable next) {
-        this.next = next;
-    }
+
 
     public long getId() {
         return id;
@@ -67,10 +69,6 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
         this.timeStep = timeStep;
     }
 
-    public void runDog() {
-        super.catRun(id, name, sizeRoad, step, timeStep,next);
-    }
-
     @Override
     public String getInfo() {
         return this.name;
@@ -83,7 +81,7 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
 
     @Override
     public void run() {
-        runDog();
+        super.catRun(id, name, sizeRoad, step, timeStep, next, executor);
     }
 
 }
