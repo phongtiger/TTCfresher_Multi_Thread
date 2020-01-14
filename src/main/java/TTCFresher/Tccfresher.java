@@ -12,7 +12,7 @@ public class Tccfresher {
                 .setNumberOfThread(3)
                 .setSecondInitialDelay(1)
                 .setSecondDelay(1)
-                .setAwaitTermination(10)
+                .setAwaitTermination(41)
                 .setTimeUnit(TimeUnit.SECONDS)
                 .build();
        // Khong gioi han luong

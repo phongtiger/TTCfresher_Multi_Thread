@@ -9,16 +9,21 @@ public class Road {
     private int numberAnimalOnce;
     private int sizeRoad;
     private int numberOfThread;
+    private int initialDelay;
+    private int delay;
     private int awaitTermination;
     private TimeUnit timeUnit;
+
     public Road() {
     }
 
-    public Road(List<List<Animal>> lists1, int numberAnimalOnce, int sizeRoad, int numberOfThread, int awaitTermination, TimeUnit timeUnit) {
+    public Road(List<List<Animal>> lists1, int numberAnimalOnce, int sizeRoad, int numberOfThread, int initialDelay, int delay, int awaitTermination, TimeUnit timeUnit) {
         this.lists1 = lists1;
         this.numberAnimalOnce = numberAnimalOnce;
         this.sizeRoad = sizeRoad;
         this.numberOfThread = numberOfThread;
+        this.initialDelay = initialDelay;
+        this.delay = delay;
         this.awaitTermination = awaitTermination;
         this.timeUnit = timeUnit;
     }
