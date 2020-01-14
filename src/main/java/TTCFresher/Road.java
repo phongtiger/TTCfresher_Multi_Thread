@@ -127,9 +127,9 @@ public class Road {
             dog.get(i).setNext((Runnable) dog.get(i + 1));
             leo.get(i).setNext((Runnable) leo.get(i + 1));
         }
-        executor.scheduleWithFixedDelay((Runnable) cat.get(0),initialDelay,delay,timeUnit);
-        executor.scheduleWithFixedDelay((Runnable) dog.get(0),initialDelay,delay,timeUnit);
-        executor.scheduleWithFixedDelay((Runnable) leo.get(0),initialDelay,delay,timeUnit);
+        executor.scheduleWithFixedDelay((Runnable) cat.get(0), initialDelay, delay, timeUnit);
+        executor.scheduleWithFixedDelay((Runnable) dog.get(0), initialDelay, delay, timeUnit);
+        executor.scheduleWithFixedDelay((Runnable) leo.get(0), initialDelay, delay, timeUnit);
         executor.awaitTermination(awaitTermination, TimeUnit.SECONDS);
         executor.shutdown();
     }
