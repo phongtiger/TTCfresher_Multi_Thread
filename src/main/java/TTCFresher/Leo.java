@@ -2,8 +2,6 @@ package TTCFresher;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 public class Leo extends AbstractAnimal implements Animal, Runnable {
     private String name = "LEO";
@@ -78,7 +76,6 @@ public class Leo extends AbstractAnimal implements Animal, Runnable {
     public void setThreadPoolExecutor(ExecutorService executor) {
         this.executor = executor;
     }
-
 
     @Override
     public String getInfo() {

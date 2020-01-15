@@ -18,11 +18,10 @@ public abstract class AbstractAnimal {
         while (count <= sizeRoad) {
             count += step;
             this.processCommand(timeStep);
-
         }
         try {
             System.out.println(name + " id: " + id + " done");
-           executor.execute(next);
+            executor.execute(next);
         } catch (Exception e) {
             System.out.println("End");
         }

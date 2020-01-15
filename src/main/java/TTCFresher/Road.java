@@ -9,21 +9,17 @@ public class Road {
     private int numberAnimalOnce;
     private int sizeRoad;
     private int numberOfThread;
-    private int initialDelay;
-    private int delay;
     private int awaitTermination;
     private TimeUnit timeUnit;
 
     public Road() {
     }
 
-    public Road(List<List<Animal>> lists1, int numberAnimalOnce, int sizeRoad, int numberOfThread, int initialDelay, int delay, int awaitTermination, TimeUnit timeUnit) {
+    public Road(List<List<Animal>> lists1, int numberAnimalOnce, int sizeRoad, int numberOfThread, int awaitTermination, TimeUnit timeUnit) {
         this.lists1 = lists1;
         this.numberAnimalOnce = numberAnimalOnce;
         this.sizeRoad = sizeRoad;
         this.numberOfThread = numberOfThread;
-        this.initialDelay = initialDelay;
-        this.delay = delay;
         this.awaitTermination = awaitTermination;
         this.timeUnit = timeUnit;
     }
@@ -40,15 +36,6 @@ public class Road {
 //        return lists;
 //    }
 
-    public List<Animal> getListThreadPool() {
-        List<Animal> animalsList = new ArrayList<>();
-        for (AnimalType a : AnimalType.values()) {
-            for (int i = 0; i <= this.numberAnimalOnce; i++) {
-                animalsList.add(new AnimalFactory().getAnimal(a, i, sizeRoad));
-            }
-        }
-        return animalsList;
-    }
 //
 //    public List<Runnable> getRunList() {
 //        List<Runnable> runnableList = new ArrayList<>();
@@ -84,10 +71,17 @@ public class Road {
 //        executor.shutdown();
 //
 //    }
-
+    public List<Animal> getListThreadPool() {
+    List<Animal> animalsList = new ArrayList<>();
+    AnimalFactory animalFactory = new AnimalFactoryImpl();
+    for (AnimalType a : AnimalType.values()) {
+        for (int i = 0; i <= this.numberAnimalOnce; i++) {
+            animalsList.add(animalFactory.getAnimal(a, i, sizeRoad));
+        }
+    }
+    return animalsList;
+    }
     public void playRoadNew() throws InterruptedException {
-
-
         List<Animal> listAnimal = getListThreadPool();
         HashMap<String, LinkedList<Animal>> stringLinkedListHashMap = new HashMap<>();
         for (Animal animal : listAnimal
@@ -136,4 +130,3 @@ public class Road {
         executor.shutdown();
     }
 }
-

@@ -8,8 +8,6 @@ public class ConcreteBuilder implements RoadBuilder {
     private int numberAnimal;
     private int size;
     private int numberOfThread;
-    private int initialDelay;
-    private int delay;
     private int awaitTermination;
     private TimeUnit timeUnit;
 
@@ -32,18 +30,6 @@ public class ConcreteBuilder implements RoadBuilder {
     }
 
     @Override
-    public RoadBuilder setSecondInitialDelay(int initialDelay) {
-        this.initialDelay = initialDelay;
-        return this;
-    }
-
-    @Override
-    public RoadBuilder setSecondDelay(int secondDelay) {
-        this.delay = secondDelay;
-        return this;
-    }
-
-    @Override
     public RoadBuilder setAwaitTermination(int awaitTermination) {
         this.awaitTermination = awaitTermination;
         return this;
@@ -57,6 +43,6 @@ public class ConcreteBuilder implements RoadBuilder {
 
     @Override
     public Road build() {
-        return new Road(animals1, numberAnimal, size, numberOfThread, initialDelay, delay, awaitTermination, timeUnit);
+        return new Road(animals1, numberAnimal, size, numberOfThread, awaitTermination, timeUnit);
     }
 }

@@ -10,8 +10,6 @@ public class Tccfresher {
                 .setNumberOfAnimal(n)
                 .setSizeRoad(sizeRoad)
                 .setNumberOfThread(3)
-                .setSecondInitialDelay(1)
-                .setSecondDelay(1)
                 .setAwaitTermination(41)
                 .setTimeUnit(TimeUnit.SECONDS)
                 .build();

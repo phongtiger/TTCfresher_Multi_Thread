@@ -1,8 +1,9 @@
 package TTCFresher;
 
-public class AnimalFactory {
-    public Animal getAnimal(AnimalType animalType, long i, int road){
-        Animal animal = null;
+public class AnimalFactoryImpl implements AnimalFactory {
+    @Override
+    public Animal getAnimal(AnimalType animalType, long i, int road) {
+                Animal animal = null;
         switch (animalType){
             case DOG:
                 animal = new Dog(i,road);
@@ -16,5 +17,4 @@ public class AnimalFactory {
         }
         return animal;
     }
-
 }
