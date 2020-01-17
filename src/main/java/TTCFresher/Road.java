@@ -71,7 +71,7 @@ public class Road {
 //        executor.shutdown();
 //
 //    }
-    public List<Animal> getListThreadPool() {
+    public List<Animal> getListMixAnimal() {
     List<Animal> animalsList = new ArrayList<>();
     AnimalFactory animalFactory = new AnimalFactoryImpl();
     for (AnimalType a : AnimalType.values()) {
@@ -82,46 +82,46 @@ public class Road {
     return animalsList;
     }
     public void playRoadNew() throws InterruptedException {
-        List<Animal> listAnimal = getListThreadPool();
-        HashMap<String, LinkedList<Animal>> stringLinkedListHashMap = new HashMap<>();
-        for (Animal animal : listAnimal
+        List<Animal> listMixAnimal = getListMixAnimal();
+        HashMap<String, LinkedList<Animal>> hashMapWithKindOfAnimalVSAnimal = new HashMap<>();
+        for (Animal animal : listMixAnimal
         ) {
-            switch (animal.getInfo()) {
+            switch (animal.getKindOfAnimal()) {
                 case "CAT":
-                    if (!stringLinkedListHashMap.containsKey("CAT")) {
-                        stringLinkedListHashMap.put("CAT", new LinkedList<>());
-                    } else if (stringLinkedListHashMap.containsKey("CAT")) {
-                        stringLinkedListHashMap.get("CAT").add(animal);
+                    if (!hashMapWithKindOfAnimalVSAnimal.containsKey("CAT")) {
+                        hashMapWithKindOfAnimalVSAnimal.put("CAT", new LinkedList<>());
+                    } else if (hashMapWithKindOfAnimalVSAnimal.containsKey("CAT")) {
+                        hashMapWithKindOfAnimalVSAnimal.get("CAT").add(animal);
                     }
                     break;
                 case "LEO":
-                    if (!stringLinkedListHashMap.containsKey("LEO")) {
-                        stringLinkedListHashMap.put("LEO", new LinkedList<>());
-                    } else if (stringLinkedListHashMap.containsKey("LEO")) {
-                        stringLinkedListHashMap.get("LEO").add(animal);
+                    if (!hashMapWithKindOfAnimalVSAnimal.containsKey("LEO")) {
+                        hashMapWithKindOfAnimalVSAnimal.put("LEO", new LinkedList<>());
+                    } else if (hashMapWithKindOfAnimalVSAnimal.containsKey("LEO")) {
+                        hashMapWithKindOfAnimalVSAnimal.get("LEO").add(animal);
                     }
                     break;
                 case "DOG":
-                    if (!stringLinkedListHashMap.containsKey("DOG")) {
-                        stringLinkedListHashMap.put("DOG", new LinkedList<>());
-                    } else if (stringLinkedListHashMap.containsKey("DOG")) {
-                        stringLinkedListHashMap.get("DOG").add(animal);
+                    if (!hashMapWithKindOfAnimalVSAnimal.containsKey("DOG")) {
+                        hashMapWithKindOfAnimalVSAnimal.put("DOG", new LinkedList<>());
+                    } else if (hashMapWithKindOfAnimalVSAnimal.containsKey("DOG")) {
+                        hashMapWithKindOfAnimalVSAnimal.get("DOG").add(animal);
                     }
                     break;
             }
         }
-        LinkedList<Animal> cat = stringLinkedListHashMap.get(AnimalType.CAT.toString());
-        LinkedList<Animal> dog = stringLinkedListHashMap.get(AnimalType.DOG.toString());
-        LinkedList<Animal> leo = stringLinkedListHashMap.get(AnimalType.LEO.toString());
+        LinkedList<Animal> cat = hashMapWithKindOfAnimalVSAnimal.get(AnimalType.CAT.toString());
+        LinkedList<Animal> dog = hashMapWithKindOfAnimalVSAnimal.get(AnimalType.DOG.toString());
+        LinkedList<Animal> leo = hashMapWithKindOfAnimalVSAnimal.get(AnimalType.LEO.toString());
 
         ExecutorService executor = Executors.newFixedThreadPool(numberOfThread);
         for (int i = 0; i < numberAnimalOnce - 1; i++) {
-            cat.get(i).setNext((Runnable) cat.get(i + 1));
-            dog.get(i).setNext((Runnable) dog.get(i + 1));
-            leo.get(i).setNext((Runnable) leo.get(i + 1));
-            cat.get(i).setThreadPoolExecutor(executor);
-            dog.get(i).setThreadPoolExecutor(executor);
-            leo.get(i).setThreadPoolExecutor(executor);
+            cat.get(i).setAnimalNext((Runnable) cat.get(i + 1));
+            dog.get(i).setAnimalNext((Runnable) dog.get(i + 1));
+            leo.get(i).setAnimalNext((Runnable) leo.get(i + 1));
+            cat.get(i).setExecutorService(executor);
+            dog.get(i).setExecutorService(executor);
+            leo.get(i).setExecutorService(executor);
         }
         executor.execute((Runnable) cat.get(0));
         executor.execute((Runnable) dog.get(0));

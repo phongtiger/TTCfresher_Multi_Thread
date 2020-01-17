@@ -1,15 +1,14 @@
 package TTCFresher;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public interface Animal {
-    String getInfo();
+    String getKindOfAnimal();
 
     String endRoad();
 
-    void setNext(Runnable next);
+    void setAnimalNext(Runnable next);
 
-    void setThreadPoolExecutor(ExecutorService executor);
+    void setExecutorService(ExecutorService executor);
 
 }

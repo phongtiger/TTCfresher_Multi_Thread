@@ -12,7 +12,7 @@ public abstract class AbstractAnimal {
         return " " + name + " " + dateString + " ";
     }
 
-    protected void catRun(Long id, String name, int sizeRoad, double step, int timeStep, Runnable next, ExecutorService executor) {
+    protected void runAnimal(Long id, String name, int sizeRoad, double step, int timeStep, Runnable next, ExecutorService executor) {
         System.out.println(name + " id: " + id + " start");
         int count = 0;
         while (count <= sizeRoad) {
