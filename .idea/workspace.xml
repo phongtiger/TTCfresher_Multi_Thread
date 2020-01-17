@@ -11,19 +11,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/AbstractAnimal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/AbstractAnimal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/AnimalFactory$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/AnimalFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/AnimalFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/ConcreteBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/ConcreteBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/Leo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/Leo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/Road.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/Road.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/RoadBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/RoadBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/Tccfresher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TTCFresher/Tccfresher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/AbstractAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/AbstractAnimal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/AnimalFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/AnimalFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/AnimalFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/AnimalFactoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/Cat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/Dog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/Leo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/Leo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/Road.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TTCFresher/Tccfresher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TTCFresher/Tccfresher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +171,7 @@
       <workItem from="1579070720710" duration="3702000" />
       <workItem from="1579224161354" duration="601000" />
       <workItem from="1579233793620" duration="140000" />
-      <workItem from="1579246960884" duration="481000" />
+      <workItem from="1579246960884" duration="3822000" />
     </task>
     <task id="LOCAL-00001" summary="tai len">
       <created>1578447746300</created>
@@ -314,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579073593193</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="hoan thanh2">
+      <created>1579247485220</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1579247485220</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +359,8 @@
     <MESSAGE value="sua lan 18" />
     <MESSAGE value="sua lan build thanh cong nhung thieu delay thread" />
     <MESSAGE value="hoan thanh" />
-    <option name="LAST_COMMIT_MESSAGE" value="hoan thanh" />
+    <MESSAGE value="hoan thanh2" />
+    <option name="LAST_COMMIT_MESSAGE" value="hoan thanh2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="455" y="100" width="1000" height="839" key="#Inspections" timestamp="1578558805313">
@@ -376,26 +383,26 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="529" y="27" width="852" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988@0.27.1920.988" timestamp="1578393449941" />
-    <state x="431" y="49" width="1048" height="941" key="CommitChangelistDialog2" timestamp="1579073592856">
+    <state x="431" y="49" width="1048" height="941" key="CommitChangelistDialog2" timestamp="1579247484870">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="431" y="49" width="1048" height="941" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1579073592856" />
-    <state width="1864" height="284" key="GridCell.Tab.0.bottom" timestamp="1579157668873">
+    <state x="431" y="49" width="1048" height="941" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1579247484870" />
+    <state width="1864" height="590" key="GridCell.Tab.0.bottom" timestamp="1579252884958">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1864" height="284" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579157668873" />
-    <state width="1864" height="284" key="GridCell.Tab.0.center" timestamp="1579157668872">
+    <state width="1864" height="590" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579252884958" />
+    <state width="1864" height="590" key="GridCell.Tab.0.center" timestamp="1579252884958">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1864" height="284" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1579157668872" />
-    <state width="1864" height="284" key="GridCell.Tab.0.left" timestamp="1579157668872">
+    <state width="1864" height="590" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1579252884958" />
+    <state width="1864" height="590" key="GridCell.Tab.0.left" timestamp="1579252884956">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1864" height="284" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1579157668872" />
-    <state width="1864" height="284" key="GridCell.Tab.0.right" timestamp="1579157668872">
+    <state width="1864" height="590" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1579252884956" />
+    <state width="1864" height="590" key="GridCell.Tab.0.right" timestamp="1579252884958">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1864" height="284" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1579157668872" />
+    <state width="1864" height="590" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1579252884958" />
     <state width="1864" height="541" key="GridCell.Tab.1.bottom" timestamp="1578905902050">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -420,10 +427,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="325" y="67" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1578541455300" />
-    <state x="455" y="193" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1579073595143">
+    <state x="455" y="193" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1579247487411">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="455" y="193" width="1000" height="654" key="Vcs.Push.Dialog.v2/0.27.1920.988@0.27.1920.988" timestamp="1579073595143" />
+    <state x="455" y="193" width="1000" height="654" key="Vcs.Push.Dialog.v2/0.27.1920.988@0.27.1920.988" timestamp="1579247487411" />
     <state x="540" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1579233849894">
       <screen x="0" y="27" width="1920" height="988" />
     </state>

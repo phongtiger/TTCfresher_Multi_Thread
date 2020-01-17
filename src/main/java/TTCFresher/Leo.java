@@ -26,6 +26,9 @@ public class Leo extends AbstractAnimal implements Animal, Runnable {
         this.sizeRoad = sizeRoad;
     }
 
+    public Leo() {
+    }
+
     public int getSizeRoad() {
         return sizeRoad;
     }
@@ -33,10 +36,6 @@ public class Leo extends AbstractAnimal implements Animal, Runnable {
     public void setSizeRoad(int sizeRoad) {
         this.sizeRoad = sizeRoad;
     }
-
-    public Leo() {
-    }
-
 
     public long getId() {
         return id;

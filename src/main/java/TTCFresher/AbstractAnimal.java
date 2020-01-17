@@ -12,7 +12,7 @@ public abstract class AbstractAnimal {
         return " " + name + " " + dateString + " ";
     }
 
-    protected void runAnimal(Long id, String name, int sizeRoad, double step, int timeStep, Runnable next, ExecutorService executor) {
+    protected void runAnimal(Long id, String name, int sizeRoad, double step, int timeStep, Runnable nextRunnable, ExecutorService executor) {
         System.out.println(name + " id: " + id + " start");
         int count = 0;
         while (count <= sizeRoad) {
@@ -21,7 +21,7 @@ public abstract class AbstractAnimal {
         }
         try {
             System.out.println(name + " id: " + id + " done");
-            executor.execute(next);
+            executor.execute(nextRunnable);
         } catch (Exception e) {
             System.out.println("End");
         }

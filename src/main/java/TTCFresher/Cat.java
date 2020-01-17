@@ -28,17 +28,7 @@ public class Cat extends AbstractAnimal implements Animal, Runnable {
         return next;
     }
 
-    @Override
-    public void setAnimalNext(Runnable next) {
-        this.next = next;
-    }
-
-    @Override
-    public void setExecutorService(ExecutorService executor) {
-        this.executor = executor;
-    }
-
-    public void setExecutor(ThreadPoolExecutor executor) {
+    public void setExecutor(ExecutorService executor) {
         this.executor = executor;
     }
 
@@ -72,6 +62,16 @@ public class Cat extends AbstractAnimal implements Animal, Runnable {
 
     public void setSizeRoad(int sizeRoad) {
         this.sizeRoad = sizeRoad;
+    }
+
+    @Override
+    public void setAnimalNext(Runnable next) {
+        this.next = next;
+    }
+
+    @Override
+    public void setExecutorService(ExecutorService executor) {
+        this.executor = executor;
     }
 
     @Override

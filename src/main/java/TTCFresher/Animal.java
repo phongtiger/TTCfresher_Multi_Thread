@@ -7,7 +7,7 @@ public interface Animal {
 
     String endRoad();
 
-    void setAnimalNext(Runnable next);
+    void setAnimalNext(Runnable nextRunnable);
 
     void setExecutorService(ExecutorService executor);
 

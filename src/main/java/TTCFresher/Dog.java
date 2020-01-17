@@ -21,17 +21,6 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
     public Dog() {
     }
 
-    @Override
-    public void setAnimalNext(Runnable next) {
-        this.next = next;
-    }
-
-    @Override
-    public void setExecutorService(ExecutorService executor) {
-        this.executor = executor;
-    }
-
-
     public int getSizeRoad() {
         return sizeRoad;
     }
@@ -68,6 +57,17 @@ public class Dog extends AbstractAnimal implements Animal, Runnable {
     public void setTimeStep(int timeStep) {
         this.timeStep = timeStep;
     }
+
+    @Override
+    public void setAnimalNext(Runnable next) {
+        this.next = next;
+    }
+
+    @Override
+    public void setExecutorService(ExecutorService executor) {
+        this.executor = executor;
+    }
+
 
     @Override
     public String getKindOfAnimal() {

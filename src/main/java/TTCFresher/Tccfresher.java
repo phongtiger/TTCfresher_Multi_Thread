@@ -4,10 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Tccfresher {
     public static void main(String[] args) throws InterruptedException {
-        int n = 10;
+        int numberOfAnimal = 10;
         int sizeRoad = 100;
         Road road = new ConcreteBuilder()
-                .setNumberOfAnimal(n)
+                .setNumberOfAnimal(numberOfAnimal)
                 .setSizeRoad(sizeRoad)
                 .setNumberOfThread(3)
                 .setAwaitTermination(41)
